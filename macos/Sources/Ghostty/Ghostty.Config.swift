@@ -552,6 +552,14 @@ extension Ghostty {
             )
         }
 
+        var splitDividerHitbox: CGFloat {
+            guard let config = self.config else { return 6 }
+            var v: UInt8 = 6
+            let key = "split-divider-hitbox"
+            _ = ghostty_config_get(config, &v, key, UInt(key.lengthOfBytes(using: .utf8)))
+            return CGFloat(v)
+        }
+
         #if canImport(AppKit)
         var quickTerminalPosition: QuickTerminalPosition {
             guard let config = self.config else { return .top }
