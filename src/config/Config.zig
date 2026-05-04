@@ -1085,6 +1085,18 @@ palette: Palette = .{},
 /// Available since: 1.1.0
 @"split-divider-color": ?Color = null,
 
+/// The extra invisible hitbox size (in points) around split dividers that can
+/// be clicked and dragged to resize splits. Increasing this makes split
+/// divider dragging easier.
+///
+/// This currently applies to macOS.
+///
+/// The visible divider remains 1 point; this setting only controls the
+/// transparent draggable area.
+///
+/// Valid values are whole numbers greater than or equal to 0.
+@"split-divider-hitbox": u8 = 6,
+
 /// Control when Ghostty preserves a zoomed split. Under normal circumstances,
 /// any operation that changes focus or layout of the split tree in a window
 /// will unzoom any zoomed split. This configuration allows you to control
